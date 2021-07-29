@@ -138,7 +138,7 @@ If Helm has already been initialized on the cluster, then you may have to upgrad
 . Install the Helm chart:
 
 	cd ..
-	helm install --name myapp manifests/myapp
+	helm install  helloapp manifests/myapp
 
 . Check that the pod is running:
 
@@ -150,7 +150,7 @@ If Helm has already been initialized on the cluster, then you may have to upgrad
 
 . Access the application:
 
-  	curl http://$(kubectl get svc/myapp-greeting \
+  	curl http://$(kubectl get svc/helloapp-greeting \
   		-o jsonpath='{.status.loadBalancer.ingress[0].hostname}'):8080/hello
 
 == Debug Docker and Kubernetes using IntelliJ
