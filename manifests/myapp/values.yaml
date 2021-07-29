@@ -1,5 +1,5 @@
 greeting:
-  image: arungupta/greeting
+  image: dockerspd/helloapp
   replicaCount: 1
 
 image:
