@@ -149,9 +149,11 @@ If Helm has already been initialized on the cluster, then you may have to upgrad
 	kubectl get svc
 
 . Access the application:
-
+ If installed as a LoadBalancer service (on EKS or GKE)  
   	curl http://$(kubectl get svc/helloapp-greeting \
   		-o jsonpath='{.status.loadBalancer.ingress[0].hostname}'):8080/hello
+		
+ If installed in Minikube or MicroK8 		
 
 == Debug Docker and Kubernetes using IntelliJ
 
