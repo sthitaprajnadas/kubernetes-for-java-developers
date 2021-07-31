@@ -231,28 +231,28 @@ Let's create the cluster first.
 	eksctl get cluster
 	
 	# associate IAM OIDC provider for cluster
-	eksctl utils associate-iam-oidc-provider \
-	    --region us-east-1 \
-	    --cluster myeks \
-	    --approve
+	eksctl utils associate-iam-oidc-provider \  
+	    --region us-east-1 \  
+	    --cluster myeks \  
+	    --approve  
 	    
 	# Create Public Node Group   
-	eksctl create nodegroup --cluster=myeks \  
-                       --region=us-east-1 \  
-                       --name=eksdemo1-ng-public1 \  
-                       --node-type=t3.medium \  
-                       --nodes=2 \  
-                       --nodes-min=2 \  
-                       --nodes-max=4 \  
-                       --node-volume-size=20 \  
-                       --ssh-access \  
-                       --ssh-public-key=kube-demo \  
-                       --managed \  
-                       --asg-access \  
-                       --external-dns-access \  
-                       --full-ecr-access \  
-                       --appmesh-access \  
-                       --alb-ingress-access   
+eksctl create nodegroup --cluster=myeks \
+--region=us-east-1 \
+--name=eksdemo1-ng-public1 \
+--node-type=t3.medium \
+--nodes=2 \
+--nodes-min=2 \
+--nodes-max=4 \
+--node-volume-size=20 \
+--ssh-access \
+--ssh-public-key=kube-demo \
+--managed \
+--asg-access \
+--external-dns-access \
+--full-ecr-access \
+--appmesh-access \
+--alb-ingress-access  
 		       
 . Check the nodes:
 
