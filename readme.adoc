@@ -341,7 +341,8 @@ All scripts used in this section are in the `manifests/appmesh` directory.
 
 === Configure App Mesh
 
-. Enable side-car injection by running `create.sh` script from https://github.com/aws/aws-app-mesh-examples/tree/master/examples/apps/djapp/2_create_injector. You need to change `ca-bundle.sh` and change `MESH_NAME` to `greeting-app`.
+. Enable side-car injection : https://aws.amazon.com/blogs/containers/using-sidecar-injection-on-amazon-eks-with-aws-app-mesh/
+
 . Create `prod` namespace:
 
 	kubectl create namespace prod
@@ -350,12 +351,6 @@ All scripts used in this section are in the `manifests/appmesh` directory.
 
 	kubectl label namespace prod appmesh.k8s.aws/sidecarInjectorWebhook=enabled
 
-. Create CRDs:
-
-	kubectl create -f https://raw.githubusercontent.com/aws/aws-app-mesh-examples/master/examples/apps/djapp/3_add_crds/mesh-definition.yaml
-	kubectl create -f https://raw.githubusercontent.com/aws/aws-app-mesh-examples/master/examples/apps/djapp/3_add_crds/virtual-node-definition.yaml
-	kubectl create -f https://raw.githubusercontent.com/aws/aws-app-mesh-examples/master/examples/apps/djapp/3_add_crds/virtual-service-definition.yaml
-	kubectl create -f https://raw.githubusercontent.com/aws/aws-app-mesh-examples/master/examples/apps/djapp/3_add_crds/controller-deployment.yaml
 
 === Create App Mesh Components
 
