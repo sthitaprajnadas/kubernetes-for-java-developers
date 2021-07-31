@@ -301,7 +301,7 @@ As indicated by `*`, kubectl CLI configuration is updated to the recently create
 
 . Redeploy the application:
 
-	helm install --name myapp manifests/myapp
+	helm install helloapp manifests/myapp
 
 . Get the service:
 +
