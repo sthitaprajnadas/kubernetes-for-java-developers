@@ -224,12 +224,8 @@ Let's create the cluster first.
 . Create EKS cluster:
 
 	eksctl create cluster --name myeks --nodes 4 --region us-west-2
-
-.  Create Cluster
-	eksctl create cluster --name=myeks \  
-			      --region=us-east-1 \  
-			      --zones=us-east-1a,us-east-1b \  
-			      --without-nodegroup   
+	or
+	eksctl create cluster --name=myeks --region=us-east-1 --zones=us-east-1a,us-east-1b --without-nodegroup   
 
 	# Get List of clusters
 	eksctl get cluster
