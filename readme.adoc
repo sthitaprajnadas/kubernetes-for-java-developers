@@ -333,9 +333,7 @@ All scripts used in this section are in the `manifests/appmesh` directory.
 
 . Set a variable `ROLE_NAME` to IAM role for the EKS worker nodes:
 
-	ROLE_NAME=$(aws iam list-roles \
-		--query \
-		'Roles[?contains(RoleName,`eksctl-myeks-nodegroup`)].RoleName' --output text)
+	ROLE_NAME=$(aws iam list-roles --query 'Roles[?contains(RoleName,`eksctl-myeks-nodegroup`)].RoleName' --output text)
 
 . Setup permissions for the worker nodes:
 
