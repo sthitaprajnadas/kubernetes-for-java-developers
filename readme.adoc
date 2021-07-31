@@ -336,10 +336,8 @@ All scripts used in this section are in the `manifests/appmesh` directory.
 	ROLE_NAME=$(aws iam list-roles --query 'Roles[?contains(RoleName,`eksctl-myeks-nodegroup`)].RoleName' --output text)
 
 . Setup permissions for the worker nodes:
-
-	aws iam attach-role-policy \
-		--role-name $ROLE_NAME \
-		--policy-arn arn:aws:iam::aws:policy/AWSAppMeshFullAccess
+		
+	aws iam attach-role-policy --role-name $ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AWSAppMeshFullAccess
 
 === Configure App Mesh
 
