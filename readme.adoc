@@ -184,7 +184,7 @@ image::images/docker-debug2.png[]
 . Access the application:
 
 	curl http://$(kubectl get svc/myapp-greeting \
-		-o jsonpath='{.status.loadBalancer.ingress[0].hostname}'):8080/hello
+		-o jsonpath='{.status.loadBalancer.ingress[0].hostname}')/hello
 
 . Show the breakpoint hit in IntelliJ:
 +
